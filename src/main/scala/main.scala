@@ -1,11 +1,7 @@
 object main {
   @main
   def getTicksAndPrintAnimationToTerminal(): Unit = {
-    val nodes = ExampleData.nodes
-    val stateHistory = MarkAlgorithm.getTicks(nodes)
-    println("size")
-    println(stateHistory.size)
-
+    val stateHistory = MarkAlgorithm.getTicks(ExampleData.nodes)
     println(StatePrinter.singleBlankPage)
     stateHistory.foreach(StatePrinter.drawPageFromNodesWithSleep)
     Thread.sleep(1000)
